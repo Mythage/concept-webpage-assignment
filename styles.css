@@ -13,12 +13,69 @@
 ////////////////////////*/
 
 /* ------------------------------- 1. Global Styles -------------------------------- */
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 'Roboto', sans-serif;
+}
 
+:root{
+    --base-text: hsl(0, 0%, 5%);
+    --base-float: hsl(248, 6%, 97%);
+    --service-tile: hsl(0, 0%, 48%);
+    --button: hsl(337, 72%, 60%);
+    --bg-purple: hsl(259, 83%, 47%);
+    --bg-blue: hsl(241, 70%, 58%);
+    --bg-projects: hsl(210, 2%, 96%);
+
+}
+
+img {
+    width: 100%;
+}
+
+.image-wrapper {
+    flex-basis: 800px;
+    flex-grow: 0;
+    flex-shrink: 1;
+}
 /* ------------------------------- 2. Typography ----------------------------------- */
+
+h1 h2 {
+    font-family: 'Merriweather', serif;
+}
 
 /* ------------------------------- 3. Layout --------------------------------------- */
 
 /* --------------- 3.1 Reusables ----------------------- */
+
+    .outer-container{
+        display: flex;
+        flex-direction: row;
+        justify-content:center;
+    }
+
+    .inner-container{
+        border: 2px solid black;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        flex-basis: 1000px;
+        flex-grow: 0;
+        flex-shrink: 1;
+        margin:0 20px;
+        padding: 100px
+    }
+
+    .button{
+        background-color: var(--button);
+        padding: 10px 20px;
+        border-radius: 20px;
+        box-shadow: 2px 5px 10px hsl(0, 0%, 20%);
+        text-transform: capitalize;
+    }
 
 /* --------------- 3.2 Other --------------------------- */
 
@@ -26,6 +83,37 @@
 
 /* --------------- 4.1 Header ------------------------- */
 
+    header{
+        background-color:var(--bg-blue);
+        color: var(--bg-projects);
+        padding: 5px 0;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: flex-end;
+    }
+
+    .nav-list ul{
+        display: flex;
+        list-style: none;
+        width: 300px;
+        justify-content: space-around;
+        position: absolute;
+        right: 5px;
+        top: 5px;
+    }
+
+    .header-text{
+        text-align: center;
+    }
 /* --------------- 4.2 Introduction ------------------- */
 
 /* ------------------------------- 5. Media Queries -------------------------------- */
+
+/*Paars #5722CD;*/
+/*Blauw #4845E4;*/
+/*Roze #ED4385;*/
+/*Zwart #0C0C0C (voor standaard tekst);*/
+/*Lichtpaars #F2F0FF (voor de grote zwevende woorden, zoals "hello" en "services") Uitzonderingen:*/
+/*                                                                                 Lichtgrijs #F3F6F9 (voor de achtergrond van de projecten)*/
+/*Grijs #7A7A7A (voor de service-tegel tekst);*/
