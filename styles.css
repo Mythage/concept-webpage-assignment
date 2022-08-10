@@ -10,6 +10,8 @@
         4.2 Introduction
         4.3 Work articles
         4.4 Service tiles
+        4.5 Form
+
     5. Media Queries
 ///////////////////////*/
 
@@ -58,7 +60,7 @@ p{
     display: flex;
     flex-direction: column;
     /*flex-grow-shrink-basis*/
-    flex: 0 1 1200px;
+    flex: 0 1 1400px;
     align-items: center;
 
     margin: 0 20px;
@@ -75,7 +77,9 @@ button {
 }
 
 /* --------------- 3.2 Other --------------------------- */
-
+.area-padding{
+    padding: 100px 0;
+}
 /* ------------------------------- 4. Areas ---------------------------------------- */
 
 /* --------------- 4.1 Header ------------------------- */
@@ -92,13 +96,20 @@ header {
     text-align: center;
 
 }
+.nav-list{
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    width: 100%;
+}
 
 .nav-list ul {
+    flex: 0 1 300px;
     display: flex;
     list-style: none;
-    justify-content: flex-end;
-    gap: 50px;
-    margin-right: 100px;
+    justify-content: space-between;
+    /*gap: 50px;*/
+    /*margin-right: 100px;*/
 }
 
 .img-header {
@@ -142,11 +153,12 @@ header {
 
 .work-article__image-container{
     flex: 0 1 600px;
-    box-shadow: 0 32px 28px -10px gray;
+
 }
 
 .work-article__image-container img{
     width: 100%;
+    box-shadow: 0 32px 28px -10px gray;
 }
 
 .work-article__info-container{
@@ -158,10 +170,9 @@ header {
 #service> div{
     display: flex;
     flex-direction: row;
-    justify-content: space-between;
+    justify-content: center;
     flex-wrap: wrap;
-    /*gap: 1em;*/
-    padding: 1em;
+    gap: 40px;
 }
 #service p{
     font-size: 12px ;
@@ -176,9 +187,21 @@ header {
     display: flex;
     flex: 0 1 380px;
     flex-direction: column;
-    border: 3px solid #5722CD;
+    border: 3px solid var(--bg-purple);
     padding: 10px;
-    margin: 10px 0;
+}
+
+/* --------------- 4.5 From ------------------- */
+Form{
+    background: linear-gradient(to bottom right, var(--bg-blue), var(--bg-purple));
+    color: var(--bg-projects);
+    padding: 5px 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-end;
+    position: relative;
+    text-align: center;
 }
 
 /* ------------------------------- 5. Media Queries -------------------------------- */
