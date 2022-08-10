@@ -8,16 +8,19 @@
     4. Areas
         4.1 Header
         4.2 Introduction
-        etc.
+        4.3 Work articles
+        4.4 Service tiles
+        4.5 Form
+
     5. Media Queries
-////////////////////////*/
+///////////////////////*/
 
 /* ------------------------------- 1. Global Styles -------------------------------- */
 * {
     padding: 0;
     margin: 0;
-    outline: 1px solid green;
     box-sizing: border-box;
+    /*outline: 2px solid grey;*/
 }
 
 :root {
@@ -28,15 +31,7 @@
     --bg-purple: hsl(259, 83%, 47%);
     --bg-blue: hsl(241, 70%, 58%);
     --bg-projects: hsl(210, 2%, 96%);
-
 }
-
-.image-wrapper {
-    flex-basis: 800px;
-    flex-grow: 0;
-    flex-shrink: 1;
-}
-
 /* ------------------------------- 2. Typography ----------------------------------- */
 
 h1 h2 h3 h4 h5 h6 {
@@ -44,38 +39,31 @@ h1 h2 h3 h4 h5 h6 {
 }
 p{
     font-family: 'Roboto', sans-serif;
+
 }
-.space {
-    line-height: 35px;
-}
-.text-color-purple{
-    color: var(--bg-purple);
-}
-.text-color-main{
-    color: var(--base-text);
-}
+
+
 /* ------------------------------- 3. Layout --------------------------------------- */
 
 /* --------------- 3.1 Reusables ----------------------- */
 
 .outer-container {
+    width: 100%;
     display: flex;
     flex-direction: row;
     justify-content: center;
-    width: 100%;
+    /*outline: 5px solid red;*/
 }
 
 .inner-container {
+    outline: 2px solid green;
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    /*flex-grow-shrink-basis*/
+    flex: 0 1 1400px;
     align-items: center;
-    flex-basis: 800px;
-    flex-grow: 0;
-    flex-shrink: 1;
+
     margin: 0 20px;
-    padding: 100px;
-    gap: 2em;
 }
 
 button {
@@ -86,21 +74,17 @@ button {
     border-style: none;
     border-radius: 20px;
     box-shadow: 2px 5px 10px hsl(0, 0%, 20%);
-
-}
-
-.center-text {
-    text-align: center;
 }
 
 /* --------------- 3.2 Other --------------------------- */
-
+.area-padding{
+    padding: 100px 0;
+}
 /* ------------------------------- 4. Areas ---------------------------------------- */
 
 /* --------------- 4.1 Header ------------------------- */
 
 header {
-    /*background-color: var(--bg-blue);*/
     background: linear-gradient(to bottom right, var(--bg-blue), var(--bg-purple));
     color: var(--bg-projects);
     padding: 5px 0;
@@ -108,25 +92,116 @@ header {
     flex-direction: column;
     justify-content: flex-start;
     align-items: flex-end;
+    position: relative;
+    text-align: center;
+
+}
+.nav-list{
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    width: 100%;
 }
 
 .nav-list ul {
+    flex: 0 1 300px;
     display: flex;
     list-style: none;
-    justify-content: flex-end;
-    gap: 50px;
-    margin-right: 100px;
+    justify-content: space-between;
+    /*gap: 50px;*/
+    /*margin-right: 100px;*/
 }
 
+.img-header {
+    width: 79px;
+    height: 100px;
+    position: absolute;
+    display: block;
+    bottom: 0;
+}
+
+.spacing-around{
+    padding: 100px;
+    gap: 2em;
+}
 /* --------------- 4.2 Introduction ------------------- */
 
+.bg-introduction{
+    color: var(--bg-purple);
+}
+.bg-introduction p{
+    color: var(--base-text);
+}
+
+.intro-box{
+    flex-basis: 800px;
+    text-align: center;
+}
+
+/* --------------- 4.3 Work-articles ------------------- */
+
+.work-article{
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    padding: 2em;
+}
+
+.work-article:nth-of-type(odd){
+    flex-direction: row-reverse;
+}
+
+.work-article__image-container{
+    flex: 0 1 600px;
+
+}
+
+.work-article__image-container img{
+    width: 100%;
+    box-shadow: 0 32px 28px -10px gray;
+}
+
+.work-article__info-container{
+    flex-basis: 380px;
+}
+
+/* --------------- 4.4 Service-tiles ------------------- */
+
+#service> div{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 40px;
+}
+#service p{
+    font-size: 12px ;
+    line-height: 15px;
+}
+
+.service-tile__icon{
+    width: 80px;
+}
+
+.service-tile{
+    display: flex;
+    flex: 0 1 380px;
+    flex-direction: column;
+    border: 3px solid var(--bg-purple);
+    padding: 10px;
+}
+
+/* --------------- 4.5 From ------------------- */
+Form{
+    background: linear-gradient(to bottom right, var(--bg-blue), var(--bg-purple));
+    color: var(--bg-projects);
+    padding: 5px 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-end;
+    position: relative;
+    text-align: center;
+}
 
 /* ------------------------------- 5. Media Queries -------------------------------- */
-
-/*Paars #5722CD;*/
-/*Blauw #4845E4;*/
-/*Roze #ED4385;*/
-/*Zwart #0C0C0C (voor standaard tekst);*/
-/*Lichtpaars #F2F0FF (voor de grote zwevende woorden, zoals "hello" en "services") Uitzonderingen:*/
-/*                                                                                 Lichtgrijs #F3F6F9 (voor de achtergrond van de projecten)*/
-/*Grijs #7A7A7A (voor de service-tegel tekst);*/
