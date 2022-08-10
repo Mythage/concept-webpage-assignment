@@ -16,8 +16,8 @@
 * {
     padding: 0;
     margin: 0;
-    outline: 1px solid green;
     box-sizing: border-box;
+    /*outline: 2px solid grey;*/
 }
 
 :root {
@@ -28,15 +28,7 @@
     --bg-purple: hsl(259, 83%, 47%);
     --bg-blue: hsl(241, 70%, 58%);
     --bg-projects: hsl(210, 2%, 96%);
-
 }
-
-.image-wrapper {
-    flex-basis: 800px;
-    flex-grow: 0;
-    flex-shrink: 1;
-}
-
 /* ------------------------------- 2. Typography ----------------------------------- */
 
 h1 h2 h3 h4 h5 h6 {
@@ -54,30 +46,33 @@ p{
 .text-color-main{
     color: var(--base-text);
 }
+.center-text {
+    text-align: center;
+}
 /* ------------------------------- 3. Layout --------------------------------------- */
 
 /* --------------- 3.1 Reusables ----------------------- */
 
 .outer-container {
+    width: 100%;
     display: flex;
     flex-direction: row;
     justify-content: center;
-    width: 100%;
+    /*outline: 5px solid red;*/
 }
 
 .inner-container {
+    outline: 2px solid green;
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    /*flex-grow-shrink-basis*/
+    flex: 0 1 1400px;
     align-items: center;
-    flex-basis: 800px;
-    flex-grow: 0;
-    flex-shrink: 1;
     margin: 0 20px;
-    padding: 100px;
-    gap: 2em;
-}
 
+}
+/*padding: 100px;*/
+/*gap: 2em;*/
 button {
     background-color: var(--button);
     color: var(--base-float);
@@ -86,16 +81,50 @@ button {
     border-style: none;
     border-radius: 20px;
     box-shadow: 2px 5px 10px hsl(0, 0%, 20%);
-
-}
-
-.center-text {
-    text-align: center;
 }
 
 /* --------------- 3.2 Other --------------------------- */
+#service> div{
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 40px;
+}
+.service-tile__icon{
+    width: 100px;
+}
+.service-tile{
+    display: flex;
+    flex: 0 1 380px;
+    flex-direction: column;
+    border: 3px solid #5722CD;
+    padding: 40px;
+}
 
 /* ------------------------------- 4. Areas ---------------------------------------- */
+.work-article{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.work-article:nth-of-type(odd){
+    flex-direction: row-reverse;
+}
+
+.work-article__image-container{
+    flex: 0 1 600px;
+    /*box-shadow: 0 32px 28px -10px gray;*/
+}
+
+.work-article__image-container img{
+    width: 100%;
+}
+
+.work-article__info-container{
+    flex-basis: 480px;
+
+}
 
 /* --------------- 4.1 Header ------------------------- */
 
@@ -108,6 +137,7 @@ header {
     flex-direction: column;
     justify-content: flex-start;
     align-items: flex-end;
+    position: relative;
 }
 
 .nav-list ul {
@@ -116,6 +146,14 @@ header {
     justify-content: flex-end;
     gap: 50px;
     margin-right: 100px;
+}
+
+.img-header {
+    width: 79px;
+    height: 100px;
+    position: absolute;
+    display: block;
+    bottom: 0;
 }
 
 /* --------------- 4.2 Introduction ------------------- */
