@@ -8,9 +8,10 @@
     4. Areas
         4.1 Header
         4.2 Introduction
-        etc.
+        4.3 Work articles
+        4.4 Service tiles
     5. Media Queries
-////////////////////////*/
+///////////////////////*/
 
 /* ------------------------------- 1. Global Styles -------------------------------- */
 * {
@@ -36,19 +37,10 @@ h1 h2 h3 h4 h5 h6 {
 }
 p{
     font-family: 'Roboto', sans-serif;
+
 }
-.space {
-    line-height: 35px;
-}
-.text-color-purple{
-    color: var(--bg-purple);
-}
-.text-color-main{
-    color: var(--base-text);
-}
-.center-text {
-    text-align: center;
-}
+
+
 /* ------------------------------- 3. Layout --------------------------------------- */
 
 /* --------------- 3.1 Reusables ----------------------- */
@@ -66,13 +58,12 @@ p{
     display: flex;
     flex-direction: column;
     /*flex-grow-shrink-basis*/
-    flex: 0 1 1400px;
+    flex: 0 1 1200px;
     align-items: center;
-    margin: 0 20px;
 
+    margin: 0 20px;
 }
-/*padding: 100px;*/
-/*gap: 2em;*/
+
 button {
     background-color: var(--button);
     color: var(--base-float);
@@ -84,52 +75,12 @@ button {
 }
 
 /* --------------- 3.2 Other --------------------------- */
-#service> div{
-    display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
-    gap: 40px;
-}
-.service-tile__icon{
-    width: 100px;
-}
-.service-tile{
-    display: flex;
-    flex: 0 1 380px;
-    flex-direction: column;
-    border: 3px solid #5722CD;
-    padding: 40px;
-}
 
 /* ------------------------------- 4. Areas ---------------------------------------- */
-.work-article{
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-}
-
-.work-article:nth-of-type(odd){
-    flex-direction: row-reverse;
-}
-
-.work-article__image-container{
-    flex: 0 1 600px;
-    /*box-shadow: 0 32px 28px -10px gray;*/
-}
-
-.work-article__image-container img{
-    width: 100%;
-}
-
-.work-article__info-container{
-    flex-basis: 480px;
-
-}
 
 /* --------------- 4.1 Header ------------------------- */
 
 header {
-    /*background-color: var(--bg-blue);*/
     background: linear-gradient(to bottom right, var(--bg-blue), var(--bg-purple));
     color: var(--bg-projects);
     padding: 5px 0;
@@ -138,6 +89,8 @@ header {
     justify-content: flex-start;
     align-items: flex-end;
     position: relative;
+    text-align: center;
+
 }
 
 .nav-list ul {
@@ -156,15 +109,74 @@ header {
     bottom: 0;
 }
 
+.spacing-around{
+    padding: 100px;
+    gap: 2em;
+}
 /* --------------- 4.2 Introduction ------------------- */
 
+.bg-introduction{
+    color: var(--bg-purple);
+}
+.bg-introduction p{
+    color: var(--base-text);
+}
+
+.intro-box{
+    flex-basis: 800px;
+    text-align: center;
+}
+
+/* --------------- 4.3 Work-articles ------------------- */
+
+.work-article{
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    padding: 2em;
+}
+
+.work-article:nth-of-type(odd){
+    flex-direction: row-reverse;
+}
+
+.work-article__image-container{
+    flex: 0 1 600px;
+    box-shadow: 0 32px 28px -10px gray;
+}
+
+.work-article__image-container img{
+    width: 100%;
+}
+
+.work-article__info-container{
+    flex-basis: 380px;
+}
+
+/* --------------- 4.4 Service-tiles ------------------- */
+
+#service> div{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 1em;
+}
+#service p{
+    font-size: 12px ;
+    line-height: 15px;
+}
+
+.service-tile__icon{
+    width: 80px;
+}
+
+.service-tile{
+    display: flex;
+    flex: 0 1 380px;
+    flex-direction: column;
+    border: 3px solid #5722CD;
+    padding: 10px;
+}
 
 /* ------------------------------- 5. Media Queries -------------------------------- */
-
-/*Paars #5722CD;*/
-/*Blauw #4845E4;*/
-/*Roze #ED4385;*/
-/*Zwart #0C0C0C (voor standaard tekst);*/
-/*Lichtpaars #F2F0FF (voor de grote zwevende woorden, zoals "hello" en "services") Uitzonderingen:*/
-/*                                                                                 Lichtgrijs #F3F6F9 (voor de achtergrond van de projecten)*/
-/*Grijs #7A7A7A (voor de service-tegel tekst);*/
